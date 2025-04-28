@@ -16,7 +16,7 @@ public class ReadFileExample {
 			while((line=reader.readLine())!=null) {
 				System.out.println(line);
 			}
-			System.out.println(reader.ready());
+
 			
 		} catch (IOException e) {
 			// TODO Auto-generated catch block
