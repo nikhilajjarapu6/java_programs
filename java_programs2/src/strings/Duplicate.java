@@ -1,0 +1,51 @@
+package strings;
+
+public class Duplicate {
+	public static void main(String[] args) {
+		String str="hello world java";
+		duplicate(str);
+		duplicate2(str);
+	}
+	private static void duplicate2(String str) {
+		StringBuilder builder=new StringBuilder();
+		for(char ch:str.toCharArray()) {
+			builder.append(ch);
+		}
+		for(int i=0;i<builder.toString().length();i++) {
+			int count=0;
+			for(int j=0;j<str.length();j++) {
+				if(builder.charAt(i)==str.charAt(j)) {
+					count++;
+				}
+			}
+			System.out.println("builder method");
+			if(count>1) {
+				System.out.println(builder.charAt(i)+" :"+count);
+			}
+		}
+		
+		
+	}
+	private static void duplicate(String str) {
+		String str1="";
+		for(int i=0;i<str.length();i++) {
+			if(str1.indexOf(str.charAt(i))==-1) {
+				str1=str1+str.charAt(i);
+			}
+		}
+	
+		for(int i=0;i<str1.length();i++) {
+			int count=0;
+			for(int j=0;j<str.length();j++) {
+				if(str1.charAt(i)==str.charAt(j))
+					count++;
+				
+							}
+			if(count>1) {
+				System.out.println(str1.charAt(i)+":"+count);
+			}
+
+		}
+		
+	}
+}
